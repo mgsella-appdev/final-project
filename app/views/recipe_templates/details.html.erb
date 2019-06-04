@@ -1,0 +1,75 @@
+<h1>
+  Recipe #<%= @recipe.id %> details
+</h1>
+
+<div>
+  <div>
+    <a href="/recipes">
+      Go back
+    </a>
+  </div>
+
+  <div>
+    <a href="/existing_recipe_form/<%= @recipe.id %>">
+      Edit recipe
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_recipe/<%= @recipe.id %>">
+      Delete recipe
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt>
+    Link
+  </dt>
+  <dd>
+    <%= @recipe.link %>
+  </dd>
+
+  <dt>
+    Cuisine
+  </dt>
+  <dd>
+    <%= @recipe.cuisine_id %>
+  </dd>
+
+  <dt>
+    Preparation
+  </dt>
+  <dd>
+    <%= @recipe.preparation_id %>
+  </dd>
+
+  <dt>
+    Cook time
+  </dt>
+  <dd>
+    <%= @recipe.cook_time %>
+  </dd>
+
+  <dt>
+    User
+  </dt>
+  <dd>
+    <%= @recipe.user_id %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@recipe.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@recipe.updated_at) %> ago
+  </dd>
+</dl>
+

@@ -1,0 +1,58 @@
+<h1>
+  Preparation list
+</h1>
+
+<a href="/new_preparation_form">
+  Add a new preparation
+</a>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Name
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @preparations.each do |preparation| %>
+  <tr>
+    <td>
+      <%= preparation.id %>
+    </td>
+
+    <td>
+      <%= preparation.name %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(preparation.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(preparation.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/preparations/<%= preparation.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

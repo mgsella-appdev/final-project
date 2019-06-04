@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Change Me!</title>
+    <title>RecipeFinder</title>
 
     <!-- Expand the characters we can use beyond basic ASCII 🎉 -->
     <meta charset="utf-8">
@@ -32,6 +32,34 @@
     <!-- Make it responsive to small screens -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <!-- END BOOTSTRAP -->
+    
+          <% if current_user.blank? %>
+        <div>
+          <a href="/users/sign_in">
+            Sign in
+          </a>
+        </div>
+
+        <div>
+          <a href="/users/sign_up">
+            Sign up
+          </a>
+        </div>
+      <% else %>
+        <div>
+          <a href="/users/edit">
+            Edit profile
+          </a>
+        </div>
+
+        <div>
+          <a href="/users/sign_out" data-method="delete">
+            Sign out
+          </a>
+        </div>
+      <% end %>
+
+    
   </head>
 
   <body>
